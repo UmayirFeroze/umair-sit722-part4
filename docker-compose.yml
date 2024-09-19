@@ -1,0 +1,18 @@
+version: '1'
+
+services:
+  book_catalog:
+    build:
+      context: ./book_catalog
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://bookdb_lrqd_user:6614odHb7IpbXshtNjdc4weT8B4pgtk6@dpg-crcpujrv2p9s73ckop9g-a.oregon-postgres.render.com/bookdb_lrqd
+
+  inventory_management:
+    build:
+      context: ./inventory_management
+    ports:
+      - "3001:3001"
+    environment:
+      DATABASE_URL: postgresql://bookdb_lrqd_user:6614odHb7IpbXshtNjdc4weT8B4pgtk6@dpg-crcpujrv2p9s73ckop9g-a.oregon-postgres.render.com/bookdb_lrqd
